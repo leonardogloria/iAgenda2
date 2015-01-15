@@ -1,14 +1,18 @@
 package br.com.iagenda
 
+import br.com.iagenda.enums.Sexo
+
+
 class Cliente {
 
     String nome
     String sobrenome
-    String sexo //Todo criar enum para sexo
-    String cpf //Todo criar constraint para cpf
-    String telefone //Todo criar classe para telefone
+    Sexo sexo
+    String cpf
+    Endereco endereco
     String email
-
+    static hasMany = [telefones:Telefone]
     static constraints = {
+        cpf cpf:true
     }
 }
