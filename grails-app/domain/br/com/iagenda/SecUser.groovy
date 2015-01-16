@@ -6,6 +6,9 @@ class SecUser {
 
     String username
     String password
+    String email
+
+    Cliente cliente = new Cliente()
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked
@@ -16,6 +19,7 @@ class SecUser {
     static constraints = {
         username blank: false, unique: true
         password blank: false
+        email blank: false
     }
 
     static mapping = {

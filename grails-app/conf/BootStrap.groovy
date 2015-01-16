@@ -1,7 +1,9 @@
+import br.com.iagenda.Cliente
 import br.com.iagenda.SecRole
 import br.com.iagenda.SecUser
 import br.com.iagenda.SecUserSecRole
 import br.com.iagenda.TipoEstabelecimento
+import br.com.iagenda.enums.Sexo
 import org.springframework.context.annotation.Role
 
 class BootStrap {
@@ -16,7 +18,11 @@ class BootStrap {
         def adminRole = new SecRole(authority: 'ROLE_ADMIN').save(flush: true)
         def userRole = new SecRole(authority: 'ROLE_USER').save(flush: true)
 
-        def testUser = new SecUser(username: 'me', password: 'password')
+        def cliente = new Cliente(cpf: '12496329784', nomeCompleto: 'Leonardo Gloria',sexo: Sexo.MASCULINO, )
+        //cliente.save flush: true,failOnError: true
+
+
+        def testUser = new SecUser(username: 'me', password: 'password',cliente: cliente,email: 'leonardo.gloria@globo.com',)
         testUser.save(flush: true)
 
         SecUserSecRole.create testUser, adminRole, true

@@ -5,14 +5,15 @@ import br.com.iagenda.enums.Sexo
 
 class Cliente {
 
-    String nome
-    String sobrenome
+    String nomeCompleto
     Sexo sexo
     String cpf
     Endereco endereco
-    String email
+
     static hasMany = [telefones:Telefone]
+    static belongsTo = [secUser : SecUser]
     static constraints = {
         cpf cpf:true
+        endereco nullable: true
     }
 }

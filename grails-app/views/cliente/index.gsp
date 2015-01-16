@@ -26,15 +26,13 @@
 					
 						<g:sortableColumn property="cpf" title="${message(code: 'cliente.cpf.label', default: 'Cpf')}" />
 					
-						<g:sortableColumn property="email" title="${message(code: 'cliente.email.label', default: 'Email')}" />
-					
 						<th><g:message code="cliente.endereco.label" default="Endereco" /></th>
 					
-						<g:sortableColumn property="nome" title="${message(code: 'cliente.nome.label', default: 'Nome')}" />
+						<g:sortableColumn property="nomeCompleto" title="${message(code: 'cliente.nomeCompleto.label', default: 'Nome Completo')}" />
+					
+						<th><g:message code="cliente.secUser.label" default="Sec User" /></th>
 					
 						<g:sortableColumn property="sexo" title="${message(code: 'cliente.sexo.label', default: 'Sexo')}" />
-					
-						<g:sortableColumn property="sobrenome" title="${message(code: 'cliente.sobrenome.label', default: 'Sobrenome')}" />
 					
 					</tr>
 				</thead>
@@ -44,15 +42,13 @@
 					
 						<td><g:link action="show" id="${clienteInstance.id}">${fieldValue(bean: clienteInstance, field: "cpf")}</g:link></td>
 					
-						<td>${fieldValue(bean: clienteInstance, field: "email")}</td>
-					
 						<td>${fieldValue(bean: clienteInstance, field: "endereco")}</td>
 					
-						<td>${fieldValue(bean: clienteInstance, field: "nome")}</td>
+						<td>${fieldValue(bean: clienteInstance, field: "nomeCompleto")}</td>
+					
+						<td>${fieldValue(bean: clienteInstance, field: "secUser")}</td>
 					
 						<td>${fieldValue(bean: clienteInstance, field: "sexo")}</td>
-					
-						<td>${fieldValue(bean: clienteInstance, field: "sobrenome")}</td>
 					
 					</tr>
 				</g:each>

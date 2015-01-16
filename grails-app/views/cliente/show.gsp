@@ -32,15 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${clienteInstance?.email}">
-				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="cliente.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${clienteInstance}" field="email"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${clienteInstance?.endereco}">
 				<li class="fieldcontain">
 					<span id="endereco-label" class="property-label"><g:message code="cliente.endereco.label" default="Endereco" /></span>
@@ -50,11 +41,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${clienteInstance?.nome}">
+				<g:if test="${clienteInstance?.nomeCompleto}">
 				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="cliente.nome.label" default="Nome" /></span>
+					<span id="nomeCompleto-label" class="property-label"><g:message code="cliente.nomeCompleto.label" default="Nome Completo" /></span>
 					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${clienteInstance}" field="nome"/></span>
+						<span class="property-value" aria-labelledby="nomeCompleto-label"><g:fieldValue bean="${clienteInstance}" field="nomeCompleto"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${clienteInstance?.secUser}">
+				<li class="fieldcontain">
+					<span id="secUser-label" class="property-label"><g:message code="cliente.secUser.label" default="Sec User" /></span>
+					
+						<span class="property-value" aria-labelledby="secUser-label"><g:link controller="secUser" action="show" id="${clienteInstance?.secUser?.id}">${clienteInstance?.secUser?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -64,15 +64,6 @@
 					<span id="sexo-label" class="property-label"><g:message code="cliente.sexo.label" default="Sexo" /></span>
 					
 						<span class="property-value" aria-labelledby="sexo-label"><g:fieldValue bean="${clienteInstance}" field="sexo"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${clienteInstance?.sobrenome}">
-				<li class="fieldcontain">
-					<span id="sobrenome-label" class="property-label"><g:message code="cliente.sobrenome.label" default="Sobrenome" /></span>
-					
-						<span class="property-value" aria-labelledby="sobrenome-label"><g:fieldValue bean="${clienteInstance}" field="sobrenome"/></span>
 					
 				</li>
 				</g:if>
