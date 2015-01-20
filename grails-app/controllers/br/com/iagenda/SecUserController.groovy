@@ -1,6 +1,7 @@
 package br.com.iagenda
 
 
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -11,7 +12,7 @@ class SecUserController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond SecUser.list(params), model: [secUserInstanceCount: SecUser.count()]
+        respond SecUser.list(params), model:[secUserInstanceCount: SecUser.count()]
     }
 
     def show(SecUser secUserInstance) {
@@ -30,11 +31,11 @@ class SecUserController {
         }
 
         if (secUserInstance.hasErrors()) {
-            respond secUserInstance.errors, view: 'create'
+            respond secUserInstance.errors, view:'create'
             return
         }
 
-        secUserInstance.save flush: true
+        secUserInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
@@ -57,18 +58,18 @@ class SecUserController {
         }
 
         if (secUserInstance.hasErrors()) {
-            respond secUserInstance.errors, view: 'edit'
+            respond secUserInstance.errors, view:'edit'
             return
         }
 
-        secUserInstance.save flush: true
+        secUserInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'SecUser.label', default: 'SecUser'), secUserInstance.id])
                 redirect secUserInstance
             }
-            '*' { respond secUserInstance, [status: OK] }
+            '*'{ respond secUserInstance, [status: OK] }
         }
     }
 
@@ -80,14 +81,14 @@ class SecUserController {
             return
         }
 
-        secUserInstance.delete flush: true
+        secUserInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'SecUser.label', default: 'SecUser'), secUserInstance.id])
-                redirect action: "index", method: "GET"
+                redirect action:"index", method:"GET"
             }
-            '*' { render status: NO_CONTENT }
+            '*'{ render status: NO_CONTENT }
         }
     }
 
@@ -97,7 +98,7 @@ class SecUserController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'secUser.label', default: 'SecUser'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*' { render status: NOT_FOUND }
+            '*'{ render status: NOT_FOUND }
         }
     }
 }

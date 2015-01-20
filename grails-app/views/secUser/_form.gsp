@@ -11,18 +11,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'email', 'error')} required">
-    <label for="username">
-        <g:message code="secUser.username.label" default="Email" />
-        <span class="required-indicator">*</span>
-    </label>
-    <g:textField name="email" required="" value="${secUserInstance?.email}"/>
-
-</div>
-
-
-
-
 <div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'password', 'error')} required">
 	<label for="password">
 		<g:message code="secUser.password.label" default="Password" />
@@ -32,38 +20,14 @@
 
 </div>
 
-
-<div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'cliente.cpf', 'error')} required">
-    <label for="cpf">
-        <g:message code="cliente.cpf.label" default="Cpf" />
-        <span class="required-indicator">*</span>
-    </label>
-    <g:textField name="cliente.cpf" required="" value="${secUserInstance?.cliente?.cpf}"/>
-
-</div>
-
-
-<div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'cliente.nomeCompleto', 'error')} required">
-    <label for="nome">
-        <g:message code="cliente.nome.label" default="Nome Completo" />
-        <span class="required-indicator">*</span>
-    </label>
-    <g:textField name="cliente.nomeCompleto" required="" value="${secUserInstance?.cliente?.nomeCompleto}"/>
+<div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'email', 'error')} required">
+	<label for="email">
+		<g:message code="secUser.email.label" default="Email" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="email" required="" value="${secUserInstance?.email}"/>
 
 </div>
-
-
-
-<div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'cliente.sexo', 'error')} required">
-    <label for="sexo">
-        <g:message code="cliente.sexo.label" default="Sexo" />
-        <span class="required-indicator">*</span>
-    </label>
-    <g:select name="cliente.sexo" from="${br.com.iagenda.enums.Sexo?.values()}" keys="${br.com.iagenda.enums.Sexo.values()*.name()}" required="" value="${secUserInstance?.cliente?.sexo?.name()}" />
-
-</div>
-
-
 
 <div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'accountExpired', 'error')} ">
 	<label for="accountExpired">
@@ -82,8 +46,6 @@
 	<g:checkBox name="accountLocked" value="${secUserInstance?.accountLocked}" />
 
 </div>
-
-
 
 <div class="fieldcontain ${hasErrors(bean: secUserInstance, field: 'enabled', 'error')} ">
 	<label for="enabled">

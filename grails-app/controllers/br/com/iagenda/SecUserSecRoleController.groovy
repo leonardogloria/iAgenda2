@@ -1,6 +1,7 @@
 package br.com.iagenda
 
 
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
@@ -11,7 +12,7 @@ class SecUserSecRoleController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond SecUserSecRole.list(params), model: [secUserSecRoleInstanceCount: SecUserSecRole.count()]
+        respond SecUserSecRole.list(params), model:[secUserSecRoleInstanceCount: SecUserSecRole.count()]
     }
 
     def show(SecUserSecRole secUserSecRoleInstance) {
@@ -30,11 +31,11 @@ class SecUserSecRoleController {
         }
 
         if (secUserSecRoleInstance.hasErrors()) {
-            respond secUserSecRoleInstance.errors, view: 'create'
+            respond secUserSecRoleInstance.errors, view:'create'
             return
         }
 
-        secUserSecRoleInstance.save flush: true
+        secUserSecRoleInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
@@ -57,18 +58,18 @@ class SecUserSecRoleController {
         }
 
         if (secUserSecRoleInstance.hasErrors()) {
-            respond secUserSecRoleInstance.errors, view: 'edit'
+            respond secUserSecRoleInstance.errors, view:'edit'
             return
         }
 
-        secUserSecRoleInstance.save flush: true
+        secUserSecRoleInstance.save flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'SecUserSecRole.label', default: 'SecUserSecRole'), secUserSecRoleInstance.id])
                 redirect secUserSecRoleInstance
             }
-            '*' { respond secUserSecRoleInstance, [status: OK] }
+            '*'{ respond secUserSecRoleInstance, [status: OK] }
         }
     }
 
@@ -80,14 +81,14 @@ class SecUserSecRoleController {
             return
         }
 
-        secUserSecRoleInstance.delete flush: true
+        secUserSecRoleInstance.delete flush:true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'SecUserSecRole.label', default: 'SecUserSecRole'), secUserSecRoleInstance.id])
-                redirect action: "index", method: "GET"
+                redirect action:"index", method:"GET"
             }
-            '*' { render status: NO_CONTENT }
+            '*'{ render status: NO_CONTENT }
         }
     }
 
@@ -97,7 +98,7 @@ class SecUserSecRoleController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'secUserSecRole.label', default: 'SecUserSecRole'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*' { render status: NOT_FOUND }
+            '*'{ render status: NOT_FOUND }
         }
     }
 }

@@ -24,15 +24,17 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="username" title="${message(code: 'cliente.username.label', default: 'Username')}" />
+					
+						<g:sortableColumn property="password" title="${message(code: 'cliente.password.label', default: 'Password')}" />
+					
+						<g:sortableColumn property="email" title="${message(code: 'cliente.email.label', default: 'Email')}" />
+					
 						<g:sortableColumn property="cpf" title="${message(code: 'cliente.cpf.label', default: 'Cpf')}" />
 					
 						<th><g:message code="cliente.endereco.label" default="Endereco" /></th>
 					
-						<g:sortableColumn property="nomeCompleto" title="${message(code: 'cliente.nomeCompleto.label', default: 'Nome Completo')}" />
-					
-						<th><g:message code="cliente.secUser.label" default="Sec User" /></th>
-					
-						<g:sortableColumn property="sexo" title="${message(code: 'cliente.sexo.label', default: 'Sexo')}" />
+						<g:sortableColumn property="accountExpired" title="${message(code: 'cliente.accountExpired.label', default: 'Account Expired')}" />
 					
 					</tr>
 				</thead>
@@ -40,15 +42,17 @@
 				<g:each in="${clienteInstanceList}" status="i" var="clienteInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${clienteInstance.id}">${fieldValue(bean: clienteInstance, field: "cpf")}</g:link></td>
+						<td><g:link action="show" id="${clienteInstance.id}">${fieldValue(bean: clienteInstance, field: "username")}</g:link></td>
+					
+						<td>${fieldValue(bean: clienteInstance, field: "password")}</td>
+					
+						<td>${fieldValue(bean: clienteInstance, field: "email")}</td>
+					
+						<td>${fieldValue(bean: clienteInstance, field: "cpf")}</td>
 					
 						<td>${fieldValue(bean: clienteInstance, field: "endereco")}</td>
 					
-						<td>${fieldValue(bean: clienteInstance, field: "nomeCompleto")}</td>
-					
-						<td>${fieldValue(bean: clienteInstance, field: "secUser")}</td>
-					
-						<td>${fieldValue(bean: clienteInstance, field: "sexo")}</td>
+						<td><g:formatBoolean boolean="${clienteInstance.accountExpired}" /></td>
 					
 					</tr>
 				</g:each>

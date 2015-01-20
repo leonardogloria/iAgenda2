@@ -25,12 +25,14 @@
 					<tr>
 					
 						<g:sortableColumn property="username" title="${message(code: 'secUser.username.label', default: 'Username')}" />
-
+					
+						<g:sortableColumn property="password" title="${message(code: 'secUser.password.label', default: 'Password')}" />
+					
+						<g:sortableColumn property="email" title="${message(code: 'secUser.email.label', default: 'Email')}" />
+					
 						<g:sortableColumn property="accountExpired" title="${message(code: 'secUser.accountExpired.label', default: 'Account Expired')}" />
 					
 						<g:sortableColumn property="accountLocked" title="${message(code: 'secUser.accountLocked.label', default: 'Account Locked')}" />
-					
-						<th><g:message code="secUser.cliente.label" default="Cliente" /></th>
 					
 						<g:sortableColumn property="enabled" title="${message(code: 'secUser.enabled.label', default: 'Enabled')}" />
 					
@@ -42,13 +44,13 @@
 					
 						<td><g:link action="show" id="${secUserInstance.id}">${fieldValue(bean: secUserInstance, field: "username")}</g:link></td>
 					
-
+						<td>${fieldValue(bean: secUserInstance, field: "password")}</td>
+					
+						<td>${fieldValue(bean: secUserInstance, field: "email")}</td>
 					
 						<td><g:formatBoolean boolean="${secUserInstance.accountExpired}" /></td>
 					
 						<td><g:formatBoolean boolean="${secUserInstance.accountLocked}" /></td>
-					
-						<td>${fieldValue(bean: secUserInstance, field: "cliente")}</td>
 					
 						<td><g:formatBoolean boolean="${secUserInstance.enabled}" /></td>
 					

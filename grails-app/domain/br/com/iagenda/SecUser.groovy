@@ -8,7 +8,6 @@ class SecUser {
     String password
     String email
 
-    Cliente cliente = new Cliente()
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked
@@ -24,6 +23,7 @@ class SecUser {
 
     static mapping = {
         password column: '`password`'
+        tablePerHierarchy false
     }
 
     Set<SecRole> getAuthorities() {

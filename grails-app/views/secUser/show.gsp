@@ -41,6 +41,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${secUserInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="secUser.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${secUserInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${secUserInstance?.accountExpired}">
 				<li class="fieldcontain">
 					<span id="accountExpired-label" class="property-label"><g:message code="secUser.accountExpired.label" default="Account Expired" /></span>
@@ -55,15 +64,6 @@
 					<span id="accountLocked-label" class="property-label"><g:message code="secUser.accountLocked.label" default="Account Locked" /></span>
 					
 						<span class="property-value" aria-labelledby="accountLocked-label"><g:formatBoolean boolean="${secUserInstance?.accountLocked}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${secUserInstance?.cliente}">
-				<li class="fieldcontain">
-					<span id="cliente-label" class="property-label"><g:message code="secUser.cliente.label" default="Cliente" /></span>
-					
-						<span class="property-value" aria-labelledby="cliente-label"><g:link controller="cliente" action="show" id="${secUserInstance?.cliente?.id}">${secUserInstance?.cliente?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

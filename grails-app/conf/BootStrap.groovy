@@ -18,19 +18,15 @@ class BootStrap {
         def adminRole = new SecRole(authority: 'ROLE_ADMIN').save(flush: true)
         def userRole = new SecRole(authority: 'ROLE_USER').save(flush: true)
 
-        def cliente = new Cliente(cpf: '12496329784', nomeCompleto: 'Leonardo Gloria',sexo: Sexo.MASCULINO, )
-        //cliente.save flush: true,failOnError: true
+        def cliente = new Cliente(cpf: '12496329784', nomeCompleto: 'Leonardo Gloria',
+                sexo: Sexo.MASCULINO, username: 'admin', password: 'admin', email: 'leonardo.gloria@globo.com')
+        cliente.save flush: true, failOnError: true
 
-
-        def testUser = new SecUser(username: 'me', password: 'password',cliente: cliente,email: 'leonardo.gloria@globo.com',)
-        testUser.save(flush: true)
-
-        SecUserSecRole.create testUser, adminRole, true
+        SecUserSecRole.create cliente, adminRole, true
 
         assert SecUser.count() == 1
         assert SecRole.count() == 2
         assert SecUserSecRole.count() == 1
-
 
     }
     def destroy = {
