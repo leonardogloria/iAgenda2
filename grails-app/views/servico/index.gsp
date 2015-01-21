@@ -1,50 +1,88 @@
-
-<%@ page import="br.com.iagenda.Servico" %>
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'servico.label', default: 'Servico')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#list-servico" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-servico" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-				<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="nome" title="${message(code: 'servico.nome.label', default: 'Nome')}" />
-					
-						<g:sortableColumn property="tempoMedio" title="${message(code: 'servico.tempoMedio.label', default: 'Tempo Medio')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${servicoInstanceList}" status="i" var="servicoInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${servicoInstance.id}">${fieldValue(bean: servicoInstance, field: "nome")}</g:link></td>
-					
-						<td>${fieldValue(bean: servicoInstance, field: "tempoMedio")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${servicoInstanceCount ?: 0}" />
-			</div>
-		</div>
-	</body>
+<html lang="en">
+
+<head>
+    <meta name="layout" content="main"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App + jQuery">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>Angle - Bootstrap Admin Template</title>
+
+</head>
+
+<body>
+
+<section>
+    <!-- Page content-->
+    <div class="content-wrapper">
+        <h3>Cadastro de Serviços
+            <small>Aqui estão listados os serviços do seu estabelecimento</small>
+        </h3>
+        <div class="row">
+            <!-- START panel-->
+<g:each in="${servicoInstanceList}" status="i" var="servicoInstance">
+    ${servicoInstance}
+</g:each>
+            <div class="panel panel-default">
+
+                <div class="panel-heading">Demo Table #4</div>
+                <!-- START table-responsive-->
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Activity</th>
+                            <th>Completion</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Bootstrap 5.x</td>
+                            <td>
+                                <div data-sparkline="" data-bar-color="#5d9cec" data-height="20" data-bar-width="5" data-bar-spacing="2" data-values="1,4,4,7,5,9,10" data-resize="true"></div>
+                            </td>
+                            <td>
+                                <div class="label label-danger">Canceled</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Web Engine</td>
+                            <td>
+                                <div data-sparkline="" data-bar-color="#7266ba" data-height="20" data-bar-width="5" data-bar-spacing="2" data-values="1,4,4,10,5,9,2" data-resize="true"></div>
+                            </td>
+                            <td>
+                                <div class="label label-success">Complete</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nullam sit amet</td>
+                            <td>
+                                <div data-sparkline="" data-bar-color="#23b7e5" data-height="20" data-bar-width="5" data-bar-spacing="2" data-values="1,4,4,7,5,9,4" data-resize="true"></div>
+                            </td>
+                            <td>
+                                <div class="label label-warning">Delayed</div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+        </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+</body>
+
 </html>

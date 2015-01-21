@@ -128,11 +128,11 @@
                     <ul class="nav">
                         <!-- Iterates over all sidebar items-->
                         <li class="nav-heading ">
-                            <span data-localize="sidebar.heading.HEADER">Menu Heading</span>
+                            <span data-localize="sidebar.heading.HEADER">Menu </span>
                         </li>
 
 
-                        <li class=" ">
+                        <li class="active">
                             <g:link controller="dashboard" action="index" title="Dashboard">
 
                                 <em class="icon-speedometer"></em>
@@ -140,33 +140,33 @@
                             </g:link>
                         </li>
 
+                    <li class=" ">
+                        <a href="#forms" title="Forms" data-toggle="collapse">
+                            <em class="icon-note"></em>
+                            <span data-localize="sidebar.nav.form.FORM">Forms</span>
+                        </a>
+                        <ul id="forms" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Forms</li>
+                            <li class=" ">
+                                <a href="form-standard.html" title="Standard">
+                                    <em></em>
+                                    <span data-localize="sidebar.nav.form.STANDARD">Todos</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="form-extended.html" title="Extended">
+                                    <em></em>
+                                    <span data-localize="sidebar.nav.form.EXTENDED">Novo</span>
+                                </a>
+                            </li>
 
-                        <li class=" active">
-                            <a href="singleview.html" title="Single View">
-                                <em class="fa fa-file-o"></em>
-                                <span data-localize="sidebar.nav.SINGLEVIEW">Single View</span>
-                            </a>
-                        </li>
+                        </ul>
+                    </li>
 
 
 
-                        <li class=" ">
-                            <a href="#menuid" title="Menu" data-toggle="collapse">
-                                <em class="icon-folder"></em>
-                                <span data-localize="sidebar.nav.menu.MENU">Menu</span>
-                            </a>
-                            <ul id="menuid" class="nav sidebar-subnav collapse">
-                                <li class="sidebar-subnav-header">Menu</li>
-                                <li class=" ">
 
-                                    <g:link controller="teste" action="submenu" title="Sub Menu">
-                                        <em></em>
-                                        <span data-localize="sidebar.nav.menu.SUBMENU">Sub Menu</span>
-                                    </g:link>
 
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                     <!-- END sidebar nav-->
                 </nav>
