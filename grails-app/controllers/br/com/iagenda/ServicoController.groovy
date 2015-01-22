@@ -22,6 +22,10 @@ class ServicoController {
     def create() {
         respond new Servico(params)
     }
+    def create2()
+    {
+        respond new Servico(params)
+    }
 
     @Transactional
     def save(Servico servicoInstance) {

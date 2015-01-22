@@ -1,31 +1,5 @@
 <%@ page import="br.com.iagenda.Servico" %>
 
-<div class="  fieldcontain ${hasErrors(bean: servicoInstance, field: 'nome', 'error') }  required ">
-    <label>Nome</label>
-    <span class="required-indicator">*</span>
-        <g:textField class="form-control " name="nome" required="" value="${servicoInstance?.nome}"/>
-</div>
-
-<div class="form-group">
-    <label>Tempo Médio</label>
-
-    <g:field class="form-control"  name="tempoMedio" type="number" value="${servicoInstance.tempoMedio}" required=""/> (Minutos)
-</div>
-
-
-<div class="form-group">
-    <label>Preço</label>
-
-    <g:field class="form-control"  name="preco" type="number" value="${servicoInstance.preco}" required=""/> (Minutos)
-</div>
-
-
-
-
-
-
-
-<!--
 
 
 <div class="fieldcontain ${hasErrors(bean: servicoInstance, field: 'nome', 'error')} required">
@@ -45,4 +19,4 @@
     <g:field name="tempoMedio" type="number" value="${servicoInstance.tempoMedio}" required=""/>
 
 </div>
--->
+

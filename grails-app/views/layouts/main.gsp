@@ -44,6 +44,10 @@
     <g:javascript library="sparkline"/>
     <g:javascript library="moment"/>
     <g:javascript library="skycons"/>
+    <g:javascript library="slimscroll"/>
+    <g:javascript library="screenfull"/>
+
+
     <g:javascript library="demo"/>
 
     <g:javascript library="app"/>
@@ -143,21 +147,23 @@
                     <li class=" ">
                         <a href="#forms" title="Forms" data-toggle="collapse">
                             <em class="icon-note"></em>
-                            <span data-localize="sidebar.nav.form.FORM">Forms</span>
+                            <span data-localize="sidebar.nav.form.FORM">Serviços</span>
                         </a>
                         <ul id="forms" class="nav sidebar-subnav collapse">
-                            <li class="sidebar-subnav-header">Forms</li>
+                            <li class="sidebar-subnav-header">Serviços</li>
                             <li class=" ">
-                                <a href="form-standard.html" title="Standard">
+                                <a href="form-standard.html" title="Todos">
                                     <em></em>
                                     <span data-localize="sidebar.nav.form.STANDARD">Todos</span>
                                 </a>
                             </li>
                             <li class=" ">
-                                <a href="form-extended.html" title="Extended">
+                                <g:link controller="servico" action="create" title="Novo Serviço">
+
                                     <em></em>
                                     <span data-localize="sidebar.nav.form.EXTENDED">Novo</span>
-                                </a>
+
+                                </g:link>
                             </li>
 
                         </ul>

@@ -1,38 +1,47 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'servico.label', default: 'Servico')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#create-servico" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="create-servico" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<g:hasErrors bean="${servicoInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${servicoInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
-			</g:hasErrors>
-			<g:form url="[resource:servicoInstance, action:'save']" >
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
-			</g:form>
-		</div>
-	</body>
+<html lang="en">
+
+<head>
+    <meta name="layout" content="main"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App + jQuery">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>Angle - Bootstrap Admin Template</title>
+
+</head>
+
+<body>
+
+<section>
+    <!-- Page content-->
+    <div class="content-wrapper">
+        <h3>Novo Serviço
+            <small>Cadastre um novo serviço para o seu estabelecimento!</small>
+        </h3>
+
+            <div class="col-sm-6">
+                <!-- START panel-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">Stacked form</div>
+                    <div class="panel-body">
+                    <g:form  role="form" url="[resource:servicoInstance, action:'save']" >
+
+                            <g:render template="form"/>
+
+                            <button type="submit" class="btn btn-sm btn-default">Criar</button>
+                        </form>
+                    </div>
+                    </g:form>
+                </div>
+
+</section>
+
+
+
+
+
+
+</body>
+
 </html>

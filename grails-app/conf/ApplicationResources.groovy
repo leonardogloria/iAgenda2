@@ -32,10 +32,23 @@ modules = {
     skycons{
         resource url:'js/vendor/skycons/skycons.js'
     }
+    slimscroll{
+        resource url:'js/vendor/slimscroll/jquery.slimscroll.min.js'
+
+    }
+    screenfull{
+        resource url:'js/vendor/screenfull/dist/screenfull.min.js'
+
+    }
+
     demo{
         resource url:'js/vendor/demo/demo-flot.js'
     }
     /*
+
+       <script src="../vendor/slimscroll/jquery.slimscroll.min.js"></script>
+   <!-- SCREENFULL-->
+   <script src="../vendor/screenfull/dist/screenfull.min.js"></script>
      <!-- SPARKLINE-->
    <script src="vendor/sparklines/jquery.sparkline.min.js"></script>
    <!-- FLOT CHART-->
