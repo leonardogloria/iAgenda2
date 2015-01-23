@@ -152,12 +152,13 @@
                         </a>
 
                         <ul id="usuarios" class="nav sidebar-subnav collapse">
-                            <li class="sidebar-subnav-header">Serviços</li>
+                            <li class="sidebar-subnav-header">Usuários</li>
                             <li class=" ">
-                                <a href="form-standard.html" title="Todos">
+
+                                <g:link controller="servico" action="index" title="Todos">
                                     <em  class="icon-users"></em>
                                     <span data-localize="sidebar.nav.form.STANDARD">Todos</span>
-                                </a>
+                                </g:link>
                             </li>
                             <li class=" ">
                                 <g:link controller="servico" action="create" title="Novo Serviço">
@@ -182,10 +183,10 @@
                         <ul id="forms" class="nav sidebar-subnav collapse">
                             <li class="sidebar-subnav-header">Serviços</li>
                             <li class=" ">
-                                <a href="form-standard.html" title="Todos">
+                            <g:link controller="servico" action="index" title="Todos">
                                     <em></em>
                                     <span data-localize="sidebar.nav.form.STANDARD">Todos</span>
-                                </a>
+                              </g:link>
                             </li>
                             <li class=" ">
                                 <g:link controller="servico" action="create" title="Novo Serviço">
