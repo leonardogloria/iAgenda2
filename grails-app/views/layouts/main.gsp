@@ -144,6 +144,36 @@
                             </g:link>
                         </li>
 
+
+                    <li class=" ">
+                        <a href="#usuarios" title="Forms" data-toggle="collapse">
+                            <em class="icon-users"></em>
+                            <span data-localize="sidebar.nav.form.FORM">Usuários</span>
+                        </a>
+
+                        <ul id="usuarios" class="nav sidebar-subnav collapse">
+                            <li class="sidebar-subnav-header">Serviços</li>
+                            <li class=" ">
+                                <a href="form-standard.html" title="Todos">
+                                    <em  class="icon-users"></em>
+                                    <span data-localize="sidebar.nav.form.STANDARD">Todos</span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <g:link controller="servico" action="create" title="Novo Serviço">
+
+                                    <em class="icon-user-following"></em>
+                                    <span data-localize="sidebar.nav.form.EXTENDED">Novo</span>
+
+                                </g:link>
+                            </li>
+
+                        </ul>
+
+
+                    </li>
+
+
                     <li class=" ">
                         <a href="#forms" title="Forms" data-toggle="collapse">
                             <em class="icon-note"></em>
@@ -168,9 +198,6 @@
 
                         </ul>
                     </li>
-
-
-
 
 
                     </ul>

@@ -8,46 +8,49 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-servico" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="show-servico" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<ol class="property-list servico">
-			
-				<g:if test="${servicoInstance?.nome}">
-				<li class="fieldcontain">
-					<span id="nome-label" class="property-label"><g:message code="servico.nome.label" default="Nome" /></span>
-					
-						<span class="property-value" aria-labelledby="nome-label"><g:fieldValue bean="${servicoInstance}" field="nome"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${servicoInstance?.tempoMedio}">
-				<li class="fieldcontain">
-					<span id="tempoMedio-label" class="property-label"><g:message code="servico.tempoMedio.label" default="Tempo Medio" /></span>
-					
-						<span class="property-value" aria-labelledby="tempoMedio-label"><g:fieldValue bean="${servicoInstance}" field="tempoMedio"/></span>
-					
-				</li>
-				</g:if>
-			
-			</ol>
-			<g:form url="[resource:servicoInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${servicoInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
-		</div>
+    <section>
+    <!-- Page content-->
+    <div class="content-wrapper">
+        <h3>Serviços
+            <small></small>
+        </h3>
+
+        <g:if test="${flash.message}">
+            <div role="alert" class="alert alert-success">
+                ${flash.message}</div>
+        </g:if>
+
+        <div class="col-sm-6">
+            <!-- START panel-->
+            <div class="panel panel-default">
+                <div class="panel-heading">Novo Serviço</div>
+                    <div class="panel-body">
+                        <g:if test="${servicoInstance?.nome}">
+
+                            <h3>Nome:
+                                <small><g:fieldValue bean="${servicoInstance}" field="nome"/></small>
+                            </h3>
+
+                        </g:if>
+
+                        <g:if test="${servicoInstance?.tempoMedio}">
+                                <h3>Tempo médio:
+                                    <small><g:fieldValue bean="${servicoInstance}" field="tempoMedio"/> &nbsp;(Minutos)</small>
+                                </h3>
+
+                        </g:if>
+
+                        <g:if test="${servicoInstance?.preco}">
+                            <h3>Preço:
+                                <small><g:fieldValue bean="${servicoInstance}" field="preco"/> &nbsp;(R$)</small>
+                            </h3>
+
+                        </g:if>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+    </section>
 	</body>
 </html>
