@@ -1,6 +1,6 @@
 package iagenda
 
-import br.com.iagenda.Atendente
+
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

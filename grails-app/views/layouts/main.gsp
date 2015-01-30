@@ -155,13 +155,13 @@
                             <li class="sidebar-subnav-header">Usuários</li>
                             <li class=" ">
 
-                                <g:link controller="servico" action="index" title="Todos">
+                                <g:link controller="usuario" action="index" title="Todos">
                                     <em  class="icon-users"></em>
                                     <span data-localize="sidebar.nav.form.STANDARD">Todos</span>
                                 </g:link>
                             </li>
                             <li class=" ">
-                                <g:link controller="servico" action="create" title="Novo Serviço">
+                                <g:link controller="usuario" action="create" title="Novo Serviço">
 
                                     <em class="icon-user-following"></em>
                                     <span data-localize="sidebar.nav.form.EXTENDED">Novo</span>

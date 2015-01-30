@@ -2,7 +2,7 @@ package br.com.iagenda
 
 class Marcacao {
 
-    Cliente cliente
+    Usuario usuario
     Servico servico
     Estabelecimento estabelecimento
 

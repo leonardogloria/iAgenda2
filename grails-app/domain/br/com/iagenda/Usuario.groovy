@@ -2,10 +2,7 @@ package br.com.iagenda
 
 import br.com.iagenda.enums.Sexo
 
-/**
- *Cliente normal do site que faz solicita'coes de consultas.
- */
-class Cliente extends SecUser {
+class Usuario extends SecUser {
 
     String nomeCompleto
     Sexo sexo
