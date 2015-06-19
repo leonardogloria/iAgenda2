@@ -174,7 +174,6 @@
 
                     </li>
 
-
                     <li class=" ">
                         <a href="#forms" title="Forms" data-toggle="collapse">
                             <em class="icon-note"></em>
@@ -184,7 +183,7 @@
                             <li class="sidebar-subnav-header">Serviços</li>
                             <li class=" ">
                             <g:link controller="servico" action="index" title="Todos">
-                                    <em></em>
+                                    <em class="icon-user-following"></em>
                                     <span data-localize="sidebar.nav.form.STANDARD">Todos</span>
                               </g:link>
                             </li>
